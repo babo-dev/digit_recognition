@@ -1,0 +1,59 @@
+#canvas {
+    border: 5px;
+    border-style: solid;
+    border-color: blue;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+header {
+
+    font-size: 3em;
+
+}
+
+#predict {
+
+    font-size: 2em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+h1 {
+
+    font-size: 3em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+body {
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#predict {
+
+    border-style: none;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}

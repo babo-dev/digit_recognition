@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Shapes</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 65%;
+            flex-direction: column;
+        }
+        .shapes {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+        }
+        .shape {
+            padding-top: 10px;
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            cursor: pointer;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="shapes">
+        <img src="{{ url_for('static', filename='circle.png') }}" class="shape" id="shape1">
+        <img src="{{ url_for('static', filename='triangle.png') }}" class="shape" id="shape2">
+        <img src="{{ url_for('static', filename='quadrilateral.png') }}" class="shape" id="shape3">
+        <img src="{{ url_for('static', filename='pentagon.png') }}" class="shape" id="shape4">
+        <img src="{{ url_for('static', filename='hexagon.png') }}" class="shape" id="shape5">
+    </div>
+    <div class="shapes">
+        <img src="{{ url_for('static', filename='nil.png') }}" class="shape" id="digit0" alt="nol">
+        <img src="{{ url_for('static', filename='one.png') }}" class="shape" id="digit1" alt="bir">
+        <img src="{{ url_for('static', filename='two.png') }}" class="shape" id="digit2">
+        <img src="{{ url_for('static', filename='three.png') }}" class="shape" id="digit3">
+        <img src="{{ url_for('static', filename='four.png') }}" class="shape" id="digit4">
+        <img src="{{ url_for('static', filename='five.png') }}" class="shape" id="digit5">
+    </div>
+    <div class="shapes">
+        <img src="{{ url_for('static', filename='six.png') }}" class="shape" id="digit6">
+        <img src="{{ url_for('static', filename='seven.png') }}" class="shape" id="digit7">
+        <img src="{{ url_for('static', filename='eight.png') }}" class="shape" id="digit8">
+        <img src="{{ url_for('static', filename='nine.png') }}" class="shape" id="digit9">
+        <img src="{{ url_for('static', filename='ten.jpg') }}" class="shape" id="digit10">
+    </div>
+
+    <div class="shapes" style="padding-top: 50px">
+        <a href="/draw" class="button">Şekilleri özleşdirmek</a>
+        <a href="/digits" class="button">Sifrleri özleşdirmek</a>
+    </div>
+
+</div>
+
+<audio id="audio1" src="{{ url_for('static', filename='sounds/circle.m4a') }}"></audio>
+<audio id="audio2" src="{{ url_for('static', filename='sounds/triangle.m4a') }}"></audio>
+<audio id="audio3" src="{{ url_for('static', filename='sounds/quadrilateral.m4a') }}"></audio>
+<audio id="audio4" src="{{ url_for('static', filename='sounds/pentagon.m4a') }}"></audio>
+<audio id="audio5" src="{{ url_for('static', filename='sounds/hexagon.m4a') }}"></audio>
+
+<audio id="audio_digit0" src="{{ url_for('static', filename='sounds/nil.m4a') }}"></audio>
+<audio id="audio_digit1" src="{{ url_for('static', filename='sounds/one.m4a') }}"></audio>
+<audio id="audio_digit2" src="{{ url_for('static', filename='sounds/two.m4a') }}"></audio>
+<audio id="audio_digit3" src="{{ url_for('static', filename='sounds/three.m4a') }}"></audio>
+<audio id="audio_digit4" src="{{ url_for('static', filename='sounds/four.m4a') }}"></audio>
+<audio id="audio_digit5" src="{{ url_for('static', filename='sounds/five.m4a') }}"></audio>
+<audio id="audio_digit6" src="{{ url_for('static', filename='sounds/six.m4a') }}"></audio>
+<audio id="audio_digit7" src="{{ url_for('static', filename='sounds/seven.m4a') }}"></audio>
+<audio id="audio_digit8" src="{{ url_for('static', filename='sounds/eight.m4a') }}"></audio>
+<audio id="audio_digit9" src="{{ url_for('static', filename='sounds/nine.m4a') }}"></audio>
+<audio id="audio_digit10" src="{{ url_for('static', filename='sounds/ten.m4a') }}"></audio>
+
+<script>
+    document.getElementById('shape1').addEventListener('click', () => {
+        document.getElementById('audio1').play();
+    });
+
+    document.getElementById('shape2').addEventListener('click', () => {
+        document.getElementById('audio2').play();
+    });
+
+    document.getElementById('shape3').addEventListener('click', () => {
+        document.getElementById('audio3').play();
+    });
+
+    document.getElementById('shape4').addEventListener('click', () => {
+        document.getElementById('audio4').play();
+    });
+
+    document.getElementById('shape5').addEventListener('click', () => {
+        document.getElementById('audio5').play();
+    });
+
+
+
+    document.getElementById('digit0').addEventListener('click', () => {
+        document.getElementById('audio_digit0').play();
+    });
+
+    document.getElementById('digit1').addEventListener('click', () => {
+        document.getElementById('audio_digit1').play();
+    });
+
+    document.getElementById('digit2').addEventListener('click', () => {
+        document.getElementById('audio_digit2').play();
+    });
+
+    document.getElementById('digit3').addEventListener('click', () => {
+        document.getElementById('audio_digit3').play();
+    });
+
+    document.getElementById('digit4').addEventListener('click', () => {
+        document.getElementById('audio_digit4').play();
+    });
+
+    document.getElementById('digit5').addEventListener('click', () => {
+        document.getElementById('audio_digit5').play();
+    });
+    document.getElementById('digit6').addEventListener('click', () => {
+        document.getElementById('audio_digit6').play();
+    });
+
+    document.getElementById('digit7').addEventListener('click', () => {
+        document.getElementById('audio_digit7').play();
+    });
+
+    document.getElementById('digit8').addEventListener('click', () => {
+        document.getElementById('audio_digit8').play();
+    });
+
+    document.getElementById('digit9').addEventListener('click', () => {
+        document.getElementById('audio_digit9').play();
+    });
+
+    document.getElementById('digit10').addEventListener('click', () => {
+        document.getElementById('audio_digit10').play();
+    });
+</script>
+</body>
+</html>
