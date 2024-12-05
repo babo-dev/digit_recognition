@@ -4,6 +4,7 @@ import base64
 import numpy as np
 import cv2
 
+import models.digits
 
 init_Base64 = 21
 
@@ -74,12 +75,14 @@ def predict():
                 else:
                     final_pred = "Tegelek"
 
-    return render_template('results.html', prediction =final_pred)
+    return render_template('results.html', prediction=final_pred)
 
 
 @app.route('/detect_digit', methods=['POST'])
 def detect_digit():
-    final_pred = None
+    final_pred = "Täzeden synanyşyp görüň!"
+    audio_file = "try_again"
+
     if request.method == 'POST':
         digit = request.form['url']
         digit = digit[init_Base64:]
@@ -94,10 +97,16 @@ def detect_digit():
         img2 = np.expand_dims(image, axis=(0, -1))
 
         prediction = model.predict(img2)
-        final_pred = str(np.argmax(prediction))
+        pred = np.argmax(prediction)
 
-    return render_template('digit_result.html', prediction=final_pred)
+        if prediction[0][pred] > 0.95:
+            audio_file = models.digits.NUMBER_TO_STRING[int(pred)]
+            final_pred = str(pred) + " ýaly görünýär !"
+        print(f"confidence: {prediction[0][pred]}")
+
+    return render_template('digit_result.html', prediction=final_pred, number=audio_file)
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=3939)
+    # app.run(debug=True)

@@ -16,7 +16,7 @@
     <h1>Netije</h1>
     <div class="results">
         {%if prediction%}
-        <h2 style="color:red;">{{ prediction }} ýaly görünýär ! </h2>
+        <h2 style="color:red;">{{ prediction }} </h2>
         {%else%}
          <h2 style="color:red;">Tanamadym </h2>
         {%endif%}
@@ -24,5 +24,24 @@
 
     <a href="/digits" class="button">Yza</a>
 </body>
+
+<audio id="nol" src="{{ url_for('static', filename='sounds/responses/nol.m4a') }}"></audio>
+<audio id="bir" src="{{ url_for('static', filename='sounds/responses/bir.m4a') }}"></audio>
+<audio id="iki" src="{{ url_for('static', filename='sounds/responses/iki.m4a') }}"></audio>
+<audio id="uc" src="{{ url_for('static', filename='sounds/responses/uc.m4a') }}"></audio>
+<audio id="dort" src="{{ url_for('static', filename='sounds/responses/dort.m4a') }}"></audio>
+<audio id="bas" src="{{ url_for('static', filename='sounds/responses/bas.m4a') }}"></audio>
+<audio id="alty" src="{{ url_for('static', filename='sounds/responses/alty.m4a') }}"></audio>
+<audio id="yedi" src="{{ url_for('static', filename='sounds/responses/yedi.m4a') }}"></audio>
+<audio id="sekiz" src="{{ url_for('static', filename='sounds/responses/sekiz.m4a') }}"></audio>
+<audio id="dokuz" src="{{ url_for('static', filename='sounds/responses/dokuz.m4a') }}"></audio>
+
+<audio id="try_again" src="{{ url_for('static', filename='sounds/responses/try_again.m4a') }}"></audio>
+
+<script>
+    const music = document.getElementById("{{ number }}");
+    console.log({{ number }})
+    music.play();
+</script>
 
 </html>
